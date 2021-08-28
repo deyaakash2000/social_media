@@ -1,0 +1,24 @@
+
+<form [formGroup]="regsform" (ngSubmit)="final(regsform)">
+    <h1>REGISTER form</h1>
+    Name :
+    <input type="text" formControlName="name">
+    <span *ngIf="regsform.get('name').invalid && submit">PLESE ENTER THE VALID EMAIL</span><br><br>
+    
+    email :
+    <input type="email" formControlName="email">
+    <span *ngIf="regsform.get('email').invalid && submit">PLESE ENTER THE VALID EMAIL</span><br><br>
+
+    password  :
+    <input type="password" formControlName="password"><br><br>
+    <span *ngIf="regsform.get('password').invalid && submit">PLESE ENTER THE VALID PASSWORD</span>
+
+    contact:
+    <input type="email" formControlName="contact">
+    <span *ngIf="regsform.get('contact').invalid && submit">PLESE ENTER THE VALID EMAIL</span><br><br>
+
+    <button type="submit">REGISTER</button>
+
+
+</form>
+<a routerLink="">Login from hear</a>

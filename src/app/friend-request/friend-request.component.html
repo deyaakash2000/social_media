@@ -1,0 +1,27 @@
+
+<div class="container" >
+    <div class="row">
+        <div class="col" *ngFor="let request of friendRequests; let i = index">
+            <div class="card" *ngIf="friendRequests.length > 0">
+                <div class="card-body">
+                  <h5 class="card-title">{{request.name}}</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">{{request.email}}</h6>
+                 
+                 <a href="javascript:void(0);"  (click)="manageFriendRequest(request, true)" class="btn btn-success">Accept</a>&nbsp;&nbsp;&nbsp;
+                  <a href="javascript:void(0);" (click)="manageFriendRequest(request, false)" class="btn btn-danger">Reject</a>
+                 </div>
+            </div>
+        </div>
+        <div class="row" *ngIf="friendRequests.length === 0">
+            <div class="col">
+                <div class="card">
+                    <p>You don't have any friend requests</p>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+   
+    
+  
+

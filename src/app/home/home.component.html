@@ -1,0 +1,52 @@
+<h1>WELCOME TO MY SOCIAL NETWORK WEB APPLICATION</h1>
+<br>
+<button class="btn btn-warning" (click)="logout()">Logout</button>
+
+<a class="btn btn-warning m-3" routerLink="/all-users">All users</a>
+<a class="btn btn-warning m-3" routerLink="/friend-request">Friend request</a>
+<a class="btn btn-warning m-3" routerLink="/friend-list">Friends list</a>
+
+
+<!-- it is text area for the add comments -->
+<div class="container">
+    <form [formGroup]=" postform" (ngSubmit)="loginsubmit(postform)">
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Example textarea</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                formControlName="textarea"></textarea>
+            <button type="submit" class="btn btn-success my-3">Post Success</button>
+        </div>
+    </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- cards for the show all posts -->
+<div class="container my-5">
+    <div class="row ">
+        <div class="card " style="width: 18rem;" *ngFor="let post of posts let i = index">
+            <div class="card-body">
+                <h5 class="card-title">{{post.user.name}}</h5>
+                <p class="card-text">{{post.contents}}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">{{post.createdAt | date}}</li>
+            </ul>
+            <div class="card-body">
+                <a routerLink="/post/{{post.id}}" class="card-link">View Details</a>
+
+            </div>
+        </div>
+    </div>
+</div>

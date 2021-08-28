@@ -1,0 +1,20 @@
+
+<form [formGroup]="loginform" (ngSubmit)="loginsubmit(loginform)">
+    <h1>Login form</h1>
+    
+    email :
+    <input type="email" formControlName="email">
+    <span *ngIf="loginform.get('email').invalid && submit">PLESE ENTER THE VALID EMAIL</span><br><br>
+
+    password  :
+    <input type="password" formControlName="password"><br><br>
+    <span *ngIf="loginform.get('password').invalid && submit">PLESE ENTER THE VALID PASSWORD</span>
+
+    <button type="submit">login</button>
+
+
+</form>
+
+
+<a routerLink="register">Creat Account</a><br><br>
+<a routerLink="update">reset password</a>

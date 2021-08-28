@@ -1,0 +1,13 @@
+<div class="container my-5">
+    <div class="row ">
+        <div class="card " style="width: 18rem" *ngFor="let friend of friends let i = index">
+            <div class="card-body">
+                <h5 class="card-title">{{friend.name}}</h5>
+                <p class="card-text">{{friend.email}}</p>
+            </div>
+            <ul class="list-group list-group-flush  my-5">
+                <li class="list-group-item"></li>
+            </ul>
+        </div>
+    </div>
+</div>

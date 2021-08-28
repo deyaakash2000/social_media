@@ -1,0 +1,24 @@
+<div *ngFor="let message of messages">
+    <div *ngIf="currentuser === message.fromuserid">
+        {{sender.name}} : {{message.text}}
+    </div>
+    <div *ngIf="currentuser!== message.fromuserid">
+        {{receiver.name}} : {{message.text}}
+
+    </div>
+
+</div>
+
+<form [formGroup]="chats" (ngSubmit)="chatsubmit(chats)">
+    <div class="container">
+        <div class="bg-light p-2">
+            <div class="d-flex flex-row align-items-start">
+                <textarea class="form-control ml-1 shadow-none textarea " formControlName="text"></textarea>
+            </div>
+
+            <div class="mt-2 text-right"><button class="btn btn-primary" type="submit">send</button>
+
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,72 @@
+<div class="container my-5 " *ngIf="posts">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1>{{posts.postid}}</h1>
+            <h1 class="display-4">{{posts.user.name}}</h1>
+            <p class="lead">{{posts.createdAt | date}}</p>
+            <p class="lead">{{posts.contents}}</p>
+        </div>
+    </div>
+</div>
+<a class="btn btn-warning m-3" routerLink="/home">Back</a>
+
+
+
+
+
+
+
+
+
+
+
+    <div>
+        <a href="javascript:void(0)" (click)="addremovelikes(posts.postid)">{{liketest}}</a> |  <!---questions--->
+       {{likecount}} peoples likes posts
+    </div>
+
+
+
+<!-- ceate commends -->
+<form [formGroup]="commendform" (ngSubmit)="commendsubmit(commendform)">
+    <div class="container">
+        <div class="bg-light p-2">
+            <div class="d-flex flex-row align-items-start">
+                <textarea class="form-control ml-1 shadow-none textarea " formControlName="textarea"></textarea>
+            </div>
+
+            <div class="mt-2 text-right"><button class="btn btn-primary" type="submit">Post comment</button>
+
+            </div>
+        </div>
+    </div>
+</form>
+
+
+
+
+
+
+
+
+
+
+<div class="container mt-5" *ngFor="let comment of  comments">
+    <div class="d-flex justify-content-center row">
+        <div class="col-md-8">
+            <div class="d-flex flex-column comment-section">
+                <div class="bg-white p-2">
+                    <div class="d-flex flex-row user-info">
+                        <div class="d-flex flex-column justify-content-start ml-2">{{comment.user.name}}<span
+                                class="d-block font-weight-bold name"></span><span
+                                class="date text-black-50">{{comment.createdAt | date}}</span></div>
+                    </div>
+                    <div class="mt-2">
+                        <p class="comment-text">{{comment.contents}}</p>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>

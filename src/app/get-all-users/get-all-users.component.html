@@ -1,0 +1,17 @@
+<div class="container my-5">
+    <h1>All Users Lists</h1>
+    <div class="row">
+        <div class="card m-3" style="width: 18rem;" *ngFor="let user of users ">
+            <div class="card-body ">
+                <h5 class="card-title">{{user.name}}</h5>
+                <p class="card-text">{{user.email}}</p>
+            </div>
+            <!-- <ul class="list-group list-group-flush">
+                <li class="list-group-item">date of posts</li>
+            </ul> -->
+            <a routerLink="/texts/{{user.detailsid}}">Start Conversation</a>
+            <a href="javascript:void(0)" (click)="addfriend(user.detailsid)">Add friend</a>
+
+        </div>
+    </div>
+</div>
